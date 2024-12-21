@@ -5,26 +5,10 @@ import { Progress } from "@/components/ui/progress";
 import { Leads } from "@/config/constants";
 import SalesProgress from "./sales-progress";
 import Image from "next/image";
+import KeyActivities from "./activities";
+import LeadCardsCarousel from "./leads-carousel";
 
 export default function DashboardPage() {
-  //   const leads = [
-  //     {
-  //       id: "1",
-  //       name: "Jane Reyes",
-  //       topic: "Improving cost per cup",
-  //       status: "New",
-  //       createdOn: "3/10/2024 9:30 AM",
-  //     },
-  //     {
-  //       id: "2",
-  //       name: "Lilly Pyles",
-  //       topic: "Cafe A100 bulk rate",
-  //       status: "New",
-  //       createdOn: "3/13/2024 2:45 PM",
-  //     },
-  //     // Add more leads as needed
-  //   ]
-
   return (
     <div className="p-6 bg-white w-full">
       <Card className="mb-6">
@@ -45,34 +29,40 @@ export default function DashboardPage() {
               </CardTitle>
             </div>
             <div className="text-right">
-              {/* <p className="text-sm font-medium">Target: $45 million</p>
-              <Progress value={68} className="mt-2 w-[200px]" /> */}
               <SalesProgress />
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="">
-            <p className="text-sm text-muted-foreground font-boldblack">
-              Copilot has pinpointed 20 keyleads that show strong purchase
-              intent and actively engagging. These leads need your focus.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            <LeadCard
-              name="Jane Reyes"
-              role="COO"
-              company="Northwind Traders"
-              description="Jane may be interested in upgrading espresso machines for her in-store coffee shops."
-              tags={["Expand business", "High buying intent"]}
-            />
-            <LeadCard
-              name="Allan Munger"
-              role="Head of Real Estate Development"
-              company="Contoso Coffee"
-              description="Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract."
-              tags={["Upcoming meeting", "Due today"]}
-            />
+          <div className="flex gap-4 w-full">
+            <div className="w-3/5">
+              <p className="text-xs text-muted-foreground font-bold mb-2">
+                Copilot has pinpointed 20 keyleads that show strong purchase
+                intent and actively engagging. These leads need your focus.
+              </p>
+              {/* <div className="grid gap-6 md:grid-cols-2">
+                <LeadCard
+                  name="Jane Reyes"
+                  role="COO"
+                  company="Northwind Traders"
+                  description="Jane may be interested in upgrading espresso machines for her in-store coffee shops."
+                  tag1="High buying intent"
+                  tag2="Expand business" 
+                />
+                <LeadCard
+                  name="Allan Munger"
+                  role="Head of Real Estate Development"
+                  company="Contoso Coffee"
+                  description="Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract."
+                  tag1="Upcoming meeting"
+                  tag2="Due today"
+                />
+              </div> */}
+              <LeadCardsCarousel />
+            </div>
+            <div className="w-2/5">
+              <KeyActivities />
+            </div>
           </div>
         </CardContent>
       </Card>
