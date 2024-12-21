@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Topnav from "@/components/common/topnav";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <TooltipProvider>
+          <SidebarProvider>
+            <div className="flex flex-col w-full">
+              <div className="fixed top-0 left-0 right-0">
+                <Topnav />
+              </div>
+              <div className="mt-10">{children}</div>
+            </div>
+          </SidebarProvider>
+        </TooltipProvider>
+      </body>
     </html>
   );
 }

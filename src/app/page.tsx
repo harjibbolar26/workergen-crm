@@ -1,12 +1,17 @@
+import { InnerNav } from "@/components/common/innernav";
+import DashboardPage from "@/components/common/leads";
 import { AppSidebar } from "@/components/common/sidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import Image from "next/image";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Home() {
   return (
-    <SidebarProvider>
+    <div className="flex w-full">
       <AppSidebar />
-      <SidebarTrigger />
-    </SidebarProvider>
+      <div className="w-full p-2">
+        <SidebarTrigger />
+        <InnerNav/>
+        <DashboardPage/>
+      </div>
+    </div>
   );
 }

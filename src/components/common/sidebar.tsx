@@ -21,7 +21,7 @@ import {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props}>
+    <Sidebar {...props} className="mt-10">
       <SidebarContent>
         {navItems.map((item) => (
           <SidebarGroup key={item.title}>
