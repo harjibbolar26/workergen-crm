@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@radix-ui/react-separator";
+import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
 
 interface SaleStage {
   name: string;
@@ -25,23 +26,31 @@ export default function SalesProgress() {
 
   return (
     <Card className="w-full shadow-none border-none relative">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 mb--4">
-        <CardTitle className="text-xs font-medium flex items-center justify-between w-full mb--4">
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 max-sm:-mb-[10px] -mb-3">
+        <CardTitle className="max-smtext-xs text-[10px] font-medium flex items-center justify-between w-full">
           1 month until Q4 ends
           <div className="flex items-center justify-between w-1/2 text-xs">
-            <div className="flex items-center relative">
-              <Separator
-                orientation="vertical"
-                className="h-6 w-[1.5px] bg-black absolute bottom-[-8px]"
-              />
-              <span>Target</span>
-              <span className="font-bold">
-                $45 million
+            <div className="flex items-center justify-start relative">
+              <Tooltip delayDuration={300}>
+                <TooltipTrigger asChild>
+                  <div className="">
+                    <Separator
+                      orientation="vertical"
+                      className="h-6 w-[1.5px] bg-black absolute -bottom-3 sm:bottom-0"
+                    />
+                    <span className="text-[10px] hidden sm:block">
+                      Target $45 million
+                    </span>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent className="sm:hidden text-[10px]">
+                  Target $45 million
+                </TooltipContent>
+              </Tooltip>
+              <span className="text-muted-foreground text-[10px] max-sm:text-right">
+                60% of target achieved
               </span>
             </div>
-            <span className="text-muted-foreground">
-              60% of target achieved
-            </span>
           </div>
         </CardTitle>
       </CardHeader>

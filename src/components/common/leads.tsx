@@ -1,3 +1,5 @@
+"use client";
+
 import { LeadCard } from "@/components/common/leads-card";
 import { LeadsTable } from "@/components/common/lead-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,8 +9,14 @@ import SalesProgress from "./sales-progress";
 import Image from "next/image";
 import KeyActivities from "./activities";
 import LeadCardsCarousel from "./leads-carousel";
+import LeadDetails from "./leads-details";
+import { useState } from "react";
 
 export default function DashboardPage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const handleOpenLeadsDetails = () => {
+    setIsDialogOpen(true);
+  };
   return (
     <div className="p-6 bg-white w-full">
       <Card className="mb-6">
@@ -34,8 +42,8 @@ export default function DashboardPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="flex gap-4 w-full">
-            <div className="w-3/5">
+          <div className="flex max-md:flex-col md:gap-8 gap-4 w-full">
+            <div className="md:w-3/5">
               <p className="text-xs text-muted-foreground font-bold mb-2">
                 Copilot has pinpointed 20 keyleads that show strong purchase
                 intent and actively engagging. These leads need your focus.
@@ -58,12 +66,13 @@ export default function DashboardPage() {
                   tag2="Due today"
                 />
               </div> */}
-              <LeadCardsCarousel />
+              <LeadCardsCarousel openDetails={handleOpenLeadsDetails}/>
             </div>
-            <div className="w-2/5">
+            <div className="md:w-2/5 mt-6 md:mt-0">
               <KeyActivities />
             </div>
           </div>
+          
         </CardContent>
       </Card>
 

@@ -50,7 +50,7 @@ export function InnerNav() {
                   <p className="max-lg:hidden">Show chart</p>
                 </div>
               </TooltipTrigger>
-              <TooltipContent className="lg:hidden">Delete</TooltipContent>
+              <TooltipContent className="lg:hidden">Show chart</TooltipContent>
             </Tooltip>
           </div>
 

@@ -14,11 +14,16 @@ export interface Activity {
   daysToClose: number;
 }
 
-export interface LeadCard {
+export interface LeadCardI {
   name: string;
   role: string;
   company: string;
   description: string;
   tag1: string;
   tag2: string;
+  openDetails?: () => void;
+  whyPicked?: string[];
+  about?: string;
+  potentialValue?: string;
+  intent?: string;
 }

@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Mail, PlusCircle } from "lucide-react";
-import type { LeadCard } from "@/config/types";
+import type { LeadCardI } from "@/config/types";
 import Image from "next/image";
 
 export function LeadCard({
@@ -13,9 +13,10 @@ export function LeadCard({
   description,
   tag1,
   tag2,
-}: LeadCard) {
+  openDetails,
+}: LeadCardI) {
   return (
-    <Card className="w-full">
+    <Card className="w-full p-0">
       <CardContent className="pt-2">
         <div className="flex flex-col items-start gap-4">
           <div className="flex items-center gap-2">
@@ -42,7 +43,10 @@ export function LeadCard({
             </div>
           </div>
           <div className="">
-            <div className="flex flex-col items-start bg-[#eef] p-2 rounded-md relative">
+            <div
+              className="flex flex-col items-start bg-[#eef] p-2 rounded-md relative cursor-pointer"
+              onClick={openDetails}
+            >
               <div className="flex items-center gap-1">
                 <Mail size={20} />
                 <p className="font-bold text-xs w-[90%]">Engage with {name}</p>
