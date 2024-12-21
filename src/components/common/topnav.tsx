@@ -13,7 +13,7 @@ const Topnav = () => {
     <div className="bg-[#020817] w-full p-2 flex justify-between items-center text-white z-[10000]">
       <div className="flex gap-2 items-center">
         <Grip size={20}/>
-        <p className="text-xs">
+        <p className="text-xs">í
           Dynamics 365 <span>|</span> <span className="font-normal text-[10px]">Sales hub</span>
         </p>
       </div>
@@ -22,7 +22,7 @@ const Topnav = () => {
         <Plus size={20} />
         <Settings size={20} />
         <CircleHelp size={20} />
-        <UserCog size={20} />
+        <UserCog size={20} />í
       </div>
     </div>
   );

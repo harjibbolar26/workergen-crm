@@ -30,13 +30,13 @@ export default function SalesProgress() {
         <CardTitle className="max-smtext-xs text-[10px] font-medium flex items-center justify-between w-full">
           1 month until Q4 ends
           <div className="flex items-center justify-between w-1/2 text-xs">
-            <div className="flex items-center justify-start relative">
+            <div className="flex items-center justify-between relative sm:justify-start sm:gap-4 w-full">
               <Tooltip delayDuration={300}>
                 <TooltipTrigger asChild>
-                  <div className="">
+                  <div className="relative">
                     <Separator
                       orientation="vertical"
-                      className="h-6 w-[1.5px] bg-black absolute -bottom-3 sm:bottom-0"
+                      className="h-4 w-[1.5px] bg-black absolute -bottom-3 sm:bottom-0 max-sm:cursor-pointer"
                     />
                     <span className="text-[10px] hidden sm:block">
                       Target $45 million
@@ -47,9 +47,9 @@ export default function SalesProgress() {
                   Target $45 million
                 </TooltipContent>
               </Tooltip>
-              <span className="text-muted-foreground text-[10px] max-sm:text-right">
+              <div className="text-muted-foreground text-[10px] sm:ml-auto">
                 60% of target achieved
-              </span>
+              </div>
             </div>
           </div>
         </CardTitle>

@@ -30,7 +30,7 @@ export function LeadsTable({ leads }: LeadsTableProps) {
     <div>
       {/* Search Input */}
       <div
-        className="mb-4 flex items-center gap-2 rounded-md w-full md:w-1/3 sm:w-2/3 p-1"
+        className="mb-4 flex items-center gap-2 rounded-md w-full md:w-1/3 sm:w-2/3 p-1 custom-scrollbar"
         style={{
           background: "linear-gradient(90deg, #8250df, #0969da, #1a7f37)",
           padding: "2px",
@@ -57,7 +57,7 @@ export function LeadsTable({ leads }: LeadsTableProps) {
       </div>
 
       {/* Table */}
-      <Table>
+      <Table className="custom-scrollbar">
         <TableHeader>
           <TableRow>
             <TableHead className="w-[200px]">Name</TableHead>

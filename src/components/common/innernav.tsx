@@ -33,15 +33,24 @@ import {
 
 export function InnerNav() {
   return (
-    <div className="flex items-center justify-between w-full shadow-lg shadow-slate-400 px-4">
+    <div className="flex items-center justify-between w-full shadow-lg shadow-slate-400 p-2 mb-4 bg-white rounded-md">
       <div className="flex items-center justify-between gap-2 w-full">
-        <Button variant="ghost" className="gap-1 px-2 font-normal text-xs">
+        {/* <Button variant="ghost" className="gap-1 px-2 font-normal text-xs">
           My open leads
-          <ChevronDown className="size-4 opacity-50" />
-        </Button>
+        </Button> */}
+        <Tooltip delayDuration={300}>
+          <TooltipTrigger asChild className="gap-1 px-2 font-normal text-xs">
+            <div className="flex items-center gap-1">
+              <ChevronDown className="size-4 opacity-50" />
+              {/* <ChartArea className="size-4" /> */}
+              <p className="max-lg:hidden">My open leads</p>
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="lg:hidden">My open leads</TooltipContent>
+        </Tooltip>
 
         {/* <Separator orientation="vertical" className="mx-1 h-6" />    */}
-        <div className="flex items-center text-xs gap-1">
+        <div className="flex items-center text-xs gap-2">
           <div className="flex justify-center items-center gap-1 cursor-pointer hover:border hover:border-black hover:p-1 hover:rounded-md transition-all duration-300">
             <Tooltip delayDuration={300}>
               <TooltipTrigger asChild>

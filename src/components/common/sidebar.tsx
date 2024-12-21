@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -18,11 +20,24 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import AgentSkillDialog from "./agent-skill";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [isAgentSkillDialogOpen, setAgentSkillDialogOpen] =
+    React.useState(false);
+  const [isSidebarOpen, setSidebarOpen] = React.useState(true);
+
+  const handleAgentSkillClick = () => {
+    setAgentSkillDialogOpen(true);
+    setSidebarOpen(false);
+  };
+
   return (
-    <Sidebar {...props} className="mt-10">
-      <SidebarContent>
+    <Sidebar
+      {...props}
+      className={`mt-10 ${isSidebarOpen ? "block" : "hidden"} custom-scrollbar`}
+    >
+      <SidebarContent className="custom-scrollbar">
         {navItems.map((item) => (
           <SidebarGroup key={item.title}>
             {item.items?.length ? (
@@ -58,7 +73,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <SidebarMenu>
                     <SidebarMenuItem>
                       <SidebarMenuButton asChild>
-                        <a href="#">
+                        <a
+                          href="#"
+                          onClick={
+                            item.title === "Agent skill"
+                              ? handleAgentSkillClick
+                              : undefined
+                          }
+                        >
                           {item.icon && <item.icon className="size-4" />}
                           <span>{item.title}</span>
                           {item.items && (
@@ -75,6 +97,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarRail />
+      <AgentSkillDialog
+        isOpen={isAgentSkillDialogOpen}
+        setIsOpen={setAgentSkillDialogOpen}
+        onClose={() => setAgentSkillDialogOpen(false)}
+      />
     </Sidebar>
   );
 }

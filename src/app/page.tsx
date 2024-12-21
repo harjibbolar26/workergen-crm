@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex w-full">
       <AppSidebar />
-      <div className="w-full p-2">
+      <div className="w-full p-2 bg-[#eee]">
         <SidebarTrigger />
         <InnerNav/>
         <DashboardPage/>

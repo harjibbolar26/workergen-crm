@@ -16,11 +16,11 @@ export function LeadCard({
   openDetails,
 }: LeadCardI) {
   return (
-    <Card className="w-full p-0">
+    <Card className="w-full p-0 z-10">
       <CardContent className="pt-2">
         <div className="flex flex-col items-start gap-4">
           <div className="flex items-center gap-2">
-            <div className="relative">
+            <div className="relative z-10">
               <Avatar className="h-12 w-12">
                 <AvatarImage src={`/avatar-m.png`} />
                 <AvatarFallback>{name[0]}</AvatarFallback>

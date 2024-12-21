@@ -18,8 +18,8 @@ export default function DashboardPage() {
     setIsDialogOpen(true);
   };
   return (
-    <div className="p-6 bg-white w-full">
-      <Card className="mb-6">
+    <div className="p-6 bg-[#eee] w-full shadow-none">
+      <Card className="mb-6 border-2 border-blue-500">
         <CardHeader>
           <div className="flex flex-col items-start justify-between">
             <div className="">
@@ -48,35 +48,16 @@ export default function DashboardPage() {
                 Copilot has pinpointed 20 keyleads that show strong purchase
                 intent and actively engagging. These leads need your focus.
               </p>
-              {/* <div className="grid gap-6 md:grid-cols-2">
-                <LeadCard
-                  name="Jane Reyes"
-                  role="COO"
-                  company="Northwind Traders"
-                  description="Jane may be interested in upgrading espresso machines for her in-store coffee shops."
-                  tag1="High buying intent"
-                  tag2="Expand business" 
-                />
-                <LeadCard
-                  name="Allan Munger"
-                  role="Head of Real Estate Development"
-                  company="Contoso Coffee"
-                  description="Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract."
-                  tag1="Upcoming meeting"
-                  tag2="Due today"
-                />
-              </div> */}
-              <LeadCardsCarousel openDetails={handleOpenLeadsDetails}/>
+              <LeadCardsCarousel openDetails={handleOpenLeadsDetails} />
             </div>
             <div className="md:w-2/5 mt-6 md:mt-0">
               <KeyActivities />
             </div>
           </div>
-          
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="shadow-lg">
         <CardHeader>
           <CardTitle>Recent Leads</CardTitle>
         </CardHeader>

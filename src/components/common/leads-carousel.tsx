@@ -149,8 +149,8 @@ const LeadCardsCarousel = ({ openDetails }: { openDetails: () => void }) => {
   };
 
   return (
-    <div className="w-full px-4">
-      <div className="relative overflow-hidden">
+    <div className="w-full px-4 relative">
+      <div className="overflow-hidden">
         <div
           className="grid gap-6 md:grid-cols-2 transition-opacity duration-300"
           style={{ opacity: isAnimating ? 0 : 1 }}
@@ -179,13 +179,13 @@ const LeadCardsCarousel = ({ openDetails }: { openDetails: () => void }) => {
         </div>
       </div>
 
-      <div className="flex justify-center gap-2 mt-4">
+      <div className=" flex justify-center gap-2 mt-4">
         <Button
           variant="outline"
           size="icon"
           onClick={() => handleSlideChange("prev")}
           disabled={currentSlide === 0 || isAnimating}
-          className="rounded-full"
+          className="rounded-full absolute -left-1 top-1/2 transform -translate-y-1/2"
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
@@ -204,7 +204,7 @@ const LeadCardsCarousel = ({ openDetails }: { openDetails: () => void }) => {
           size="icon"
           onClick={() => handleSlideChange("next")}
           disabled={currentSlide === totalSlides - 1 || isAnimating}
-          className="rounded-full"
+          className="rounded-full absolute -right-1 top-1/2 transform -translate-y-1/2"
         >
           <ChevronRight className="h-4 w-4" />
         </Button>

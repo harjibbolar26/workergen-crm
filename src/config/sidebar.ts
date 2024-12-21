@@ -13,6 +13,7 @@ import {
   PieChart,
   Quote,
   Receipt,
+  ScanLine,
   ScrollText,
   ShoppingCart,
   Users2,
@@ -126,6 +127,11 @@ export const navItems: NavItem[] = [
   {
     title: "Performance",
     icon: BarChart3,
+    items: [],
+  },
+  {
+    title: "Agent skill",
+    icon: ScanLine,
     items: [],
   },
 ];
